@@ -1,0 +1,6 @@
+html 中文网页一般声明为gb2313 所以文件不能用utf-8 《 unicode
+	用ascii 在eclipse中不能显示，
+	gbk比较完美，可以打开notepad++中ansi
+
+
+css js 用utf-8就好了 又能显示中文，又能正常运行

@@ -1,0 +1,231 @@
+<html>
+<head>
+    <title>Oregon Table</title>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="http://prototype.ui.sh.ctriptravel.com/code_ui/_lib/ext-3.2.1/resources/css/ext-all.css"/>
+	<link rel="stylesheet" type="text/css" href="http://prototype.ui.sh.ctriptravel.com/code_ui/_lib/ext-3.2.1/uploader/css/UploadPanel.css">
+
+    <!-- GC -->
+    <!-- LIBS -->
+    <script type="text/javascript" src="http://prototype.ui.sh.ctriptravel.com/code_ui/_lib/ext-3.2.1/adapter/ext/ext-base.js"></script>
+    <!-- ENDLIBS -->
+
+    <script type="text/javascript" src="http://prototype.ui.sh.ctriptravel.com/code_ui/_lib/ext-3.2.1/ext-all.js"></script>
+	<script type="text/javascript" src="http://prototype.ui.sh.ctriptravel.com/code_ui/_lib/ext-3.2.1/uploader/js/swfupload.js"></script>
+	<script type="text/javascript" src="http://prototype.ui.sh.ctriptravel.com/code_ui/_lib/ext-3.2.1/uploader/js/UploadPanel.js"></script>
+    
+</head>
+<body>
+<div id="grid"></div>
+</body>
+</html>
+<script type="text/javascript">
+	(function main(){
+		var cm  = new Ext.grid.ColumnModel([
+			{header:'编码',dataIndex:'id',sortable:true},
+			{header:'名称',dataIndex:'name',sortable:true},
+			{header:'描述',dataIndex:'descn',sortable:true}
+		]);
+		
+		var data = [
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'dgfdgfdgf'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5'],
+			['1', 'name1', 'descn1'],
+			['3', 'name3', 'descn3'],
+			['2', 'name2', 'descn2'],
+			['4', 'name4', 'descn4'],
+			['5', 'name5', 'descn5']
+		];
+		
+		
+		var store = new Ext.data.Store({
+			proxy: new Ext.data.MemoryProxy(data),
+			reader: new Ext.data.ArrayReader({},[
+				{name:'id'},
+				{name:'name'},
+				{name:'descn'}
+			])
+		});
+
+		store.load(data);
+		
+		var rightClick = new Ext.menu.Menu( {  
+			id : 'rightClickCont',  
+			items : [ {  
+				id:'rMenu1',  
+				text : '查看',  
+				handler:function(a,b){
+					
+				}
+			}]  
+		}); 
+		var Box = {};
+		
+		var viewport = new Ext.Viewport({
+			layout:'border',
+			items:[
+				{
+					region:'west',
+					split:true,
+					title:"Oregon Tables",
+					layout:"fit",
+					height:500,
+					width:500,
+					collapsible:true,
+					items:[
+						Box.panel = new Ext.grid.GridPanel({
+							renderTo:'grid',
+							store:store,
+							cm:cm,
+							height:500,
+							disableSelection:true,
+							enableHdMenu:false,
+							stripeRows: true,
+							loadMask:true,
+							viewConfig:{
+								forceFit:true
+							}
+						})
+					]
+				},
+				{
+					region:'center',
+					items:[
+						Box.form = new Ext.form.FormPanel({
+							title: "俄勒冈申请表",
+							frame: true,
+							labelAlign: 'right',
+							items:[
+								new Ext.form.TextField({
+									fieldLabel:"上海的",
+									maxLength:3,
+									msgTarget:"yan",
+									emptyText:"空"
+								}),
+								new Ext.form.TextField({
+									fieldLabel:"yan",
+									msgTarget:"yan",
+									emptyText:"空"
+								}),
+								new Ext.form.TextField({
+									fieldLabel:"yan",
+									msgTarget:"yan",
+									emptyText:"空"
+								}),
+								new Ext.form.TextField({
+									fieldLabel:"yan",
+									msgTarget:"yan",
+									emptyText:"空"
+								}),
+								new Ext.form.TextField({
+									fieldLabel:"yan",
+									msgTarget:"yan",
+									emptyText:"空"
+								}),
+								new Ext.form.TextField({
+									fieldLabel:"yan",
+									msgTarget:"yan",
+									emptyText:"空"
+								}),
+								new Ext.form.TextField({
+									fieldLabel:"yan",
+									msgTarget:"yan",
+									emptyText:"空"
+								}),
+								new Ext.form.TextField({
+									fieldLabel:"yan",
+									msgTarget:"yan",
+									emptyText:"空"
+								})
+							]
+						}),
+						
+					]
+				}
+			]
+		});
+		Box.panel.on("rowcontextmenu",function(grid,rowIndex,e){
+			e.preventDefault();
+			rightClick.showAt(e.getXY());
+		});
+		Box.panel.on("rowclick", function(grid,rowIndex,e){
+			e.preventDefault();
+			//alert(rowIndex);
+		});
+		
+		Box.win = new Ext.Window({
+			title : '多文件上传示例',
+			width : 500,
+			height : 300,
+			resizable : false,
+			layout : 'fit',
+			items : [{
+				xtype : 'uploadpanel',
+				uploadUrl : 'http://127.0.0.1:8000/oregonnew/closureTest/',
+				filePostName : 'myUpload', // 这里很重要，默认值为'fileData',这里匹配action中的setMyUpload属性
+				flashUrl : 'http://prototype.ui.sh.ctriptravel.com/code_ui/_lib/ext-3.2.1/uploader/js/swfupload.swf',
+				fileSize : '50 MB',
+				border : false,
+				fileTypes : '*.*',
+				fileTypesDescription : '所有文件',
+				postParams : {}
+				//onUploadStart: function(){alert(100)}
+			}]
+		});
+		//Box.win.show();
+	})();
+</script>
+

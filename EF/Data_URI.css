@@ -1,0 +1,32 @@
+/*
+Content-Type: multipart/related; boundary="_ANY_STRING_WILL_DO_AS_A_SEPARATOR"
+
+--_ANY_STRING_WILL_DO_AS_A_SEPARATOR
+Content-Location:locoloco
+Content-Transfer-Encoding:base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAAGElEQVQIW2P4DwcMDAxAfBvMAhEQMYgcACEHG8ELxtbPAAAAAElFTkSuQmCC
+--_ANY_STRING_WILL_DO_AS_A_SEPARATOR--
+*/
+
+#test1 {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAAGElEQVQIW2P4DwcMDAxAfBvMAhEQMYgcACEHG8ELxtbPAAAAAElFTkSuQmCC");
+	
+    *background-image: url(mhtml:http://localhost/EF/Data_URI.css!locoloco);
+	background-color:red;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    font: bold 24px Arial;
+}
+<!doctype html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    $[![]!]
+</body>
+</html>

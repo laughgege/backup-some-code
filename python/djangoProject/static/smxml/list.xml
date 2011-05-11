@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewDataSet xmlns="">
+  <NonDevpTask>
+	<RecId>02E3500E590342759256FB4DF22CBD4D</RecId>
+
+	<LastModDateTime>2009-07-31T09:48:32+08:00</LastModDateTime>
+	<LastModBy>ffpan</LastModBy>
+	<CreatedDateTime>2009-07-31T09:47:56+08:00</CreatedDateTime>
+	<CreatedBy>ffpan</CreatedBy>
+	<TaskNumber>100933</TaskNumber>
+	<ProgramManager>yxzhao</ProgramManager>
+
+	<TaskOwner>ffpan</TaskOwner>
+	<TaskOwner_Valid>68F12F0E53864F9282E1C321DA691E7E</TaskOwner_Valid>
+	<TrStartDateTimeOn>2009-07-31T09:48:04+08:00</TrStartDateTimeOn>
+	<TrCmptDateTimeBefore>2009-07-31T09:48:06+08:00</TrCmptDateTimeBefore>
+	<DevPlanManDay>0</DevPlanManDay>
+	<DevPlanManHour>3</DevPlanManHour>
+
+	<DevManDay>0</DevManDay>
+	<DevManHour>3</DevManHour>
+	<Subject>界面组培训</Subject>
+	<Description>数据采集系统培训</Description>
+	<WorkResult />
+	<Status>工作中</Status>
+
+	<Owner />
+	<Notes>2009-7-31 9:48:31：开始工作，ffpan</Notes>
+	<ChangeNumber>0</ChangeNumber>
+	<ProjectID />
+	<ProjectName />
+	<BusObName>NonDevpTask</BusObName>
+  </NonDevpTask>
+
+  <NonDevpTask rowOrder="1">
+	<RecId>19D79CF1E8D54AF896EB2576FC9104F8</RecId>
+	<LastModDateTime>2009-08-12T19:02:16+08:00</LastModDateTime>
+	<LastModBy>ffpan</LastModBy>
+	<CreatedDateTime>2009-08-12T19:00:13+08:00</CreatedDateTime>
+	<CreatedBy>ffpan</CreatedBy>
+
+	<TaskNumber>101027</TaskNumber>
+	<ProgramManager>yxzhao</ProgramManager>
+	<TaskOwner>ffpan</TaskOwner>
+	<TaskOwner_Valid>68F12F0E53864F9282E1C321DA691E7E</TaskOwner_Valid>
+	<TrStartDateTimeOn>2009-08-06T19:00:20+08:00</TrStartDateTimeOn>
+	<TrCmptDateTimeBefore>2009-08-12T19:00:33+08:00</TrCmptDateTimeBefore>
+
+	<DevPlanManDay>0</DevPlanManDay>
+	<DevPlanManHour>10</DevPlanManHour>
+	<DevManDay>0</DevManDay>
+	<DevManHour>10</DevManHour>
+	<Subject>Offline机票</Subject>
+	<Description>Offline国内机票修复Bug</Description>
+
+	<WorkResult />
+	<Status>工作中</Status>
+	<Owner />
+	<Notes>2009-8-12 19:02:07：开始工作，ffpan</Notes>
+	<ChangeNumber>0</ChangeNumber>
+	<ProjectID />
+	<ProjectName />
+
+	<BusObName>NonDevpTask</BusObName>
+  </NonDevpTask>
+  <NonDevpTask id="NonDevpTask3" rowOrder="2">
+	<RecId>2EF333679D63453E8BE80039AA2D3E2A</RecId>
+	<LastModDateTime>2009-07-24T17:33:36+08:00</LastModDateTime>
+	<LastModBy>ffpan</LastModBy>
+	<CreatedDateTime>2009-07-24T17:33:02+08:00</CreatedDateTime>
+
+	<CreatedBy>ffpan</CreatedBy>
+	<TaskNumber>100882</TaskNumber>
+	<ProgramManager>yxzhao</ProgramManager>
+	<TaskOwner>ffpan</TaskOwner>
+	<TaskOwner_Valid>68F12F0E53864F9282E1C321DA691E7E</TaskOwner_Valid>
+	<TrStartDateTimeOn>2009-07-24T17:33:08+08:00</TrStartDateTimeOn>
+
+	<TrCmptDateTimeBefore>2009-07-24T17:33:15+08:00</TrCmptDateTimeBefore>
+	<DevPlanManDay>0</DevPlanManDay>
+	<DevPlanManHour>2</DevPlanManHour>
+	<DevManDay>0</DevManDay>
+	<DevManHour>2</DevManHour>
+	<Subject>度假新版会议</Subject>
+
+	<Description>度假新版会议</Description>
+	<WorkResult />
+	<Status>工作中</Status>
+	<Owner />
+	<Notes>2009-7-24 17:33:29：开始工作，ffpan</Notes>
+	<ChangeNumber>0</ChangeNumber>
+	<ProjectID />
+
+	<ProjectName />
+	<BusObName>NonDevpTask</BusObName>
+  </NonDevpTask>
+  <NonDevpTask id="NonDevpTask4" rowOrder="3">
+	<RecId>6E6ED23C3BC74D38BF01B720015F81EE</RecId>
+	<LastModDateTime>2009-07-29T17:48:57+08:00</LastModDateTime>
+	<LastModBy>ffpan</LastModBy>
+
+	<CreatedDateTime>2009-07-29T17:45:03+08:00</CreatedDateTime>
+	<CreatedBy>ffpan</CreatedBy>
+	<TaskNumber>100912</TaskNumber>
+	<ProgramManager>yxzhao</ProgramManager>
+	<TaskOwner>ffpan</TaskOwner>
+	<TaskOwner_Valid>68F12F0E53864F9282E1C321DA691E7E</TaskOwner_Valid>
+
+	<TrStartDateTimeOn>2009-07-28T17:48:11+08:00</TrStartDateTimeOn>
+	<TrCmptDateTimeBefore>2009-07-29T17:48:13+08:00</TrCmptDateTimeBefore>
+	<DevPlanManDay>0</DevPlanManDay>
+	<DevPlanManHour>5</DevPlanManHour>
+	<DevManDay>0</DevManDay>
+	<DevManHour>5</DevManHour>
+
+	<Subject>offline酒店进度控制</Subject>
+	<Description>offline酒店进度控制</Description>
+	<WorkResult />
+	<Status>工作中</Status>
+	<Owner />
+	<Notes>2009-7-29 17:48:36：开始工作，ffpan</Notes>
+	<ChangeNumber>0</ChangeNumber>
+
+	<ProjectID />
+	<ProjectName />
+	<BusObName>NonDevpTask</BusObName>
+  </NonDevpTask>
+  <NonDevpTask id="NonDevpTask5" rowOrder="4">
+	<RecId>88A736D6319942EE8ED754BEA34216C5</RecId>
+	<LastModDateTime>2009-10-14T17:52:27+08:00</LastModDateTime>
+
+	<LastModBy>ffpan</LastModBy>
+	<CreatedDateTime>2009-10-14T17:45:04+08:00</CreatedDateTime>
+	<CreatedBy>ffpan</CreatedBy>
+	<TaskNumber>101408</TaskNumber>
+	<ProgramManager>yxzhao</ProgramManager>
+	<TaskOwner>ffpan</TaskOwner>
+
+	<TaskOwner_Valid>68F12F0E53864F9282E1C321DA691E7E</TaskOwner_Valid>
+	<TrStartDateTimeOn>2009-10-13T17:45:12+08:00</TrStartDateTimeOn>
+	<TrCmptDateTimeBefore>2009-10-14T17:45:16+08:00</TrCmptDateTimeBefore>
+	<DevPlanManDay>0</DevPlanManDay>
+	<DevPlanManHour>8</DevPlanManHour>
+	<DevManDay>0</DevManDay>
+
+	<DevManHour>8</DevManHour>
+	<Subject>修改地址数据</Subject>
+	<Description>需求：界面组任务 整理地址数据文件</Description>
+	<WorkResult />
+	<Status>工作中</Status>
+	<Owner />
+	<Notes>2009-10-14 17:46:23：开始工作，ffpan</Notes>
+
+	<ChangeNumber>0</ChangeNumber>
+	<ProjectID />
+	<ProjectName />
+	<BusObName>NonDevpTask</BusObName>
+  </NonDevpTask>
+  <NonDevpTask id="NonDevpTask6" rowOrder="5">
+	<RecId>983427A2C6014EE7925703AEB4EBC516</RecId>
+
+	<LastModDateTime>2009-09-02T18:22:13+08:00</LastModDateTime>
+	<LastModBy>ffpan</LastModBy>
+	<CreatedDateTime>2009-09-02T18:21:26+08:00</CreatedDateTime>
+	<CreatedBy>ffpan</CreatedBy>
+	<TaskNumber>101180</TaskNumber>
+	<ProgramManager>yxzhao</ProgramManager>
+
+	<TaskOwner>ffpan</TaskOwner>
+	<TaskOwner_Valid>68F12F0E53864F9282E1C321DA691E7E</TaskOwner_Valid>
+	<TrStartDateTimeOn>2009-09-02T18:21:32+08:00</TrStartDateTimeOn>
+	<TrCmptDateTimeBefore>2009-09-02T18:21:33+08:00</TrCmptDateTimeBefore>
+	<DevPlanManDay>0</DevPlanManDay>
+	<DevPlanManHour>4</DevPlanManHour>
+
+	<DevManDay>0</DevManDay>
+	<DevManHour>4</DevManHour>
+	<Subject>界面组任务</Subject>
+	<Description>界面组文档补充和其余相关项目的bug处理</Description>
+	<WorkResult />
+	<Status>工作中</Status>
+
+	<Owner />
+	<Notes>2009-9-2 18:22:07：开始工作，ffpan</Notes>
+	<ChangeNumber>0</ChangeNumber>
+	<ProjectID />
+	<ProjectName />
+	<BusObName>NonDevpTask</BusObName>
+  </NonDevpTask>
+
+  <NonDevpTask id="NonDevpTask7" rowOrder="6">
+	<RecId>9C8ED22D982D4D78B89A1B694EE09E0C</RecId>
+	<LastModDateTime>2009-12-09T18:00:24+08:00</LastModDateTime>
+	<LastModBy>ffpan</LastModBy>
+	<CreatedDateTime>2009-12-09T17:56:58+08:00</CreatedDateTime>
+	<CreatedBy>ffpan</CreatedBy>
+
+	<TaskNumber>101873</TaskNumber>
+	<ProgramManager>yxzhao</ProgramManager>
+	<TaskOwner>ffpan</TaskOwner>
+	<TaskOwner_Valid>68F12F0E53864F9282E1C321DA691E7E</TaskOwner_Valid>
+	<TrStartDateTimeOn>2009-12-03T17:57:06+08:00</TrStartDateTimeOn>
+	<TrCmptDateTimeBefore>2009-12-09T17:57:10+08:00</TrCmptDateTimeBefore>
+
+	<DevPlanManDay>0</DevPlanManDay>
+	<DevPlanManHour>30</DevPlanManHour>
+	<DevManDay>0</DevManDay>
+	<DevManHour>30</DevManHour>
+	<Subject>界面组任务</Subject>
+	<Description>1. 静态数据浮出层系统 20h
+
+2. tripadvisor的wiki研究 10h</Description>
+
+	<WorkResult />
+	<Status>工作中</Status>
+	<Owner />
+	<Notes>2009-12-9 18:00:16：开始工作，ffpan</Notes>
+	<ChangeNumber>0</ChangeNumber>
+	<ProjectID />
+	<ProjectName />
+
+	<BusObName>NonDevpTask</BusObName>
+  </NonDevpTask>
+  <NonDevpTask id="NonDevpTask8" rowOrder="7">
+	<RecId>9F0E0FD15BC8431F942BCC49230482D5</RecId>
+	<LastModDateTime>2009-07-24T17:32:00+08:00</LastModDateTime>
+	<LastModBy>ffpan</LastModBy>
+	<CreatedDateTime>2009-07-24T17:30:43+08:00</CreatedDateTime>
+
+	<CreatedBy>ffpan</CreatedBy>
+	<TaskNumber>100880</TaskNumber>
+	<ProgramManager>yxzhao</ProgramManager>
+	<TaskOwner>ffpan</TaskOwner>
+	<TaskOwner_Valid>68F12F0E53864F9282E1C321DA691E7E</TaskOwner_Valid>
+	<TrStartDateTimeOn>2009-07-23T17:30:45+08:00</TrStartDateTimeOn>
+
+	<TrCmptDateTimeBefore>2009-07-27T17:30:49+08:00</TrCmptDateTimeBefore>
+	<DevPlanManDay>0</DevPlanManDay>
+	<DevPlanManHour>10</DevPlanManHour>
+	<DevManDay>0</DevManDay>
+	<DevManHour>0</DevManHour>
+	<Subject>酒店图片页新版设计</Subject>
+
+	<Description>位置：Online酒店图片页
+
+需求：Online酒店图片页的JS编码</Description>
+	<WorkResult />
+	<Status>工作中</Status>
+	<Owner />
+	<Notes>2009-7-24 17:31:57：开始工作，ffpan</Notes>
+	<ChangeNumber>0</ChangeNumber>
+	<ProjectID />
+
+	<ProjectName />
+	<BusObName>NonDevpTask</BusObName>
+  </NonDevpTask>
+  <NonDevpTask id="NonDevpTask9" rowOrder="8">
+	<RecId>B2675AE84EBB4D7096B5273E55B431F8</RecId>
+	<LastModDateTime>2009-09-02T18:22:52+08:00</LastModDateTime>
+	<LastModBy>ffpan</LastModBy>
+
+	<CreatedDateTime>2009-09-02T18:22:16+08:00</CreatedDateTime>
+	<CreatedBy>ffpan</CreatedBy>
+	<TaskNumber>101181</TaskNumber>
+	<ProgramManager>yxzhao</ProgramManager>
+	<TaskOwner>ffpan</TaskOwner>
+	<TaskOwner_Valid>68F12F0E53864F9282E1C321DA691E7E</TaskOwner_Valid>
+
+	<TrStartDateTimeOn>2009-09-02T18:22:22+08:00</TrStartDateTimeOn>
+	<TrCmptDateTimeBefore>2009-09-02T18:22:24+08:00</TrCmptDateTimeBefore>
+	<DevPlanManDay>0</DevPlanManDay>
+	<DevPlanManHour>3</DevPlanManHour>
+	<DevManDay>0</DevManDay>
+	<DevManHour>3</DevManHour>
+
+	<Subject>界面组任务</Subject>
+	<Description>准备Javascript的基础知识培训</Description>
+	<WorkResult />
+	<Status>工作中</Status>
+	<Owner />
+	<Notes>2009-9-2 18:22:46：开始工作，ffpan</Notes>
+	<ChangeNumber>0</ChangeNumber>
+
+	<ProjectID />
+	<ProjectName />
+	<BusObName>NonDevpTask</BusObName>
+  </NonDevpTask>
+</NewDataSet>

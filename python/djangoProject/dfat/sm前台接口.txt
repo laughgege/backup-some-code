@@ -1,0 +1,26 @@
+http://192.168.83.56:1000/dfat/forestage/getall/
+获取所有开发任务
+
+http://192.168.83.56:1000/dfat/forestage/getone/
+获取某人的开发任务，GET方法 uid = ycao
+
+http://192.168.83.56:1000/dfat/forestage/update/
+POST方法更新任务 id存在为更新，不存在为新建
+列表字段：id,tid,uid,subject,description,remark,principal,proposer,manager,expect_hours,status,type,create_time
+
+http://192.168.83.56:1000/dfat/forestage/smuserlist/
+获取所有sm用户信息
+
+http://192.168.83.56:1000/dfat/forestage/getonetaskunittest/
+获取 单元测试 GET tid=xxxxxx
+
+http://192.168.83.56:1000/dfat/forestage/updateunittest/
+更新单元测试POST 如果已有单元测试即更新，如果没有即新建
+列表字段：tid,uid,test_hours,subject,envirnment,procedure,remark,action_plan,memos,
+
+http://192.168.83.56:1000/dfat/forestage/updatelog/
+更行日志POST 如果有日志id即为更新，没有即为新建.tid对应任务。没有tid及为无任务日志
+列表字段：id,tid,content,real_hours,
+
+http://192.168.83.56:1000/dfat/forestage/gettasklog/
+获取某任务GET所有日志 tid = xxxx

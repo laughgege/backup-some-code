@@ -1,0 +1,739 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+
+<style type="text/css">
+	body,div,ul,li,h4,i,p,small,em{
+		margin:0;
+		padding:0;
+	}
+	body{
+		font-size:12px;
+		color:#838383;
+		font-family:Simsun;
+	}
+	#journey{
+		width:960px;
+	}
+	#main h4,.calendar,.flight a,.free,.ctrip,.hotel,.flight,.hotel span,#main span,.hotel small,.hotel em{
+		background-image:url(img/background.png);
+		background-repeat:no-repeat;
+	}
+	#button{
+		height:45px;
+	}
+	#button div{
+		float:left;
+		height:23px;
+		line-height:23px;
+		-moz-user-select: none; 
+		color:white;
+		text-decoration:none;
+		width:69px;
+		text-align:center;
+		margin:10px 0 0 200px;
+	}
+	#button a:hover{
+		cursor:move;
+	}
+	#main{
+		width:100%;
+		margin-top:30px;
+	}
+	#main h4{
+		background-position:56px -94px;
+		float:left;
+		height:27px;
+		width:80px;
+		line-height:27px;
+		font-size:12px;
+	}
+	.flight{
+		height:25px;
+		border:1px solid #d8d8d8;
+		background-position:0 -300px;
+		background-repeat:repeat-x;
+	}
+	.flight li{
+		width:72px;
+		height:25px;
+	}
+	.flight a{
+		background-position:0 -235px;
+		border:1px solid #0f6c0f;
+		text-decoration:none;
+		text-align:center;
+		color:white;
+		height:23px;
+		line-height:23px;
+		width:33px;
+		margin-right:1px;
+		float:left;
+	}
+	.flight li .right{
+		float:right;
+	}
+	#main ul{
+		list-style:none;
+		float:left;
+	}
+	 #main ul li{
+		float:left;
+		text-align:center;
+	}
+	.calendar li{
+		width:72px;
+	}
+	.divs{
+		margin-left:60px;
+		-moz-user-select: none; 
+		clear:left;
+	}
+	#main i{
+		float:left;
+		width:1px;
+		background-color:#d8d8d8;
+		height:27px;
+		over-flow:hidden;
+	}
+	.calendar{
+		height:39px;
+		background-position:0 -159px;
+		background-repeat:repeat-x;
+		font-size:11px;
+		color:black;
+	}
+	.calendar li{
+		padding-top:5px;
+	}
+	.calendar em{
+		display:block;
+		color:#838383;
+		font-style:normal;
+	}
+	.hotel{
+		height:50px;
+		border-top:1px solid #d8d8d8;
+		background-position:0 -300px;
+		background-repeat:repeat-x;
+		float:left;
+		color:white;
+	}
+	.hotel li{
+		width:72px;
+	}
+	.hotel div{
+		height:23px;
+		margin-right:1px;
+		line-height:23px;
+		text-decoration:none;
+		color:white;
+		width:auto;
+		position:relative;
+	}
+	.hotel a:hover,.flight li a:hover{
+		cursor:text;
+	}
+	.free{
+		background-position:0 -205px;
+		background-repeat:repeat-x;
+		border:1px solid #858585;
+	}
+	.ctrip{
+		background-position:0 -266px;
+		background-repeat:repeat-x;
+		border:1px solid #004b92;
+		
+	}
+	.hotel span{
+		display:block;
+		background-position:center -78px;
+		color:black;
+		padding:12px 3px 0 3px;
+		line-height:1em;
+		height:13px;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow : ellipsis; 
+	}
+	.hotel small{
+		background-position:0 -34px;
+		padding:0 4px;
+		position:absolute;
+		left:0;
+		top:0;
+		display:none;
+	}
+	.hotel em{
+		position:absolute;
+		background-position:0px -13px;
+		right:0;
+		top:0;
+		width:0;
+		overflow:hidden;
+		padding:0 2px;
+		display:none;
+	}
+	.flow{
+		display:block;
+		height:13px;
+		padding-top:12px;
+		background-position:9px 5px;
+		width:30px;
+		position:absolute;
+		color:red;
+		top:165px;
+		left:128px;
+		display:none;
+	}
+</style>
+<script type='text/javascript' src="http://webresource.ctrip.com/code/js/tuna_090501.js" charset = "UTF-8"></script>
+</head>
+<body>
+<div onselectstart = "return false;" id='journey'>
+	<div id='button'><div class='ctrip'>酒店</div><div class='free'>自理酒店</div></div>
+	<div id='main' class="main">
+		<div class='divs'>
+			<h4>机票信息</h4>
+			<ul class='flight'>
+				<li><a href="javascript:void(0);">机</a><a href="javascript:void(0);">机</a></li>
+				<li><a href="javascript:void(0);">机</a></li>
+				<li><a href="javascript:void(0);">机</a></li>
+				<li><a href="javascript:void(0);">机</a></li>
+				<li><a href="javascript:void(0);">机</a></li>
+			</ul>
+		</div>
+		<div class='divs'>
+			<h4 style='background-image:none;'>&nbsp;</h4>
+			<ul class='calendar'>
+				<li>07-08<em>fri</em></li>
+				<li>07-08<em>fri</em></li>
+				<li>07-08<em>fri</em></li>
+				<li>07-08<em>fri</em></li>
+				<li>07-08<em>fri</em></li>
+				<li>07-08<em>fri</em></li>
+				<li>07-08<em>fri</em></li>
+				<li>07-08<em>fri</em></li>
+				<li>07-08<em>fri</em></li>
+			</ul>
+		</div>
+		<div class='divs'>
+			<h4>酒店信息</h4>
+			<i>&nbsp;</i>
+			<ul class='hotel'>
+				<li><div class='ctrip'><small>&nbsp;</small><p>酒店(1)</p><em>&nbsp;</em></div><span>XXX酒店</span></li>
+				<li><div class='free'><small>&nbsp;</small><p>酒店自理</p><em>&nbsp;</em></div><span>XXX酒店</span></li>
+			</ul>
+			<i>&nbsp;</i>
+		</div>
+		<span id='start' class='flow'>开始</span>
+		<span id='end' class='flow'>结束</span>
+	</div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	function cssStyle(element,style){
+		return (element.currentStyle||window.getComputedStyle(element,null))[style];
+	}
+	function scrollPos(){
+		var htm = document.documentElement,bod = document.body;
+		return [htm.scrollLeft||bod.scrollLeft||0,htm.scrollTop||bod.scrollTop||0];
+	}
+	function getMouse(e){
+		var e = $fixE(e),tar = e.$target,xy = scrollPos();
+		x = e.pageX || (e.clientX + xy[0]);
+		y = e.pageY || (e.clientY + xy[1]);
+		return [x,y];
+	}
+	function rPos(p,r){
+		return Math.round(parseInt(p)/r)*r-3; //搞笑了为啥要减三
+	}
+	function setPos(el,x,y){
+		if(x||x==0)	el.style.left = x+'px';
+		if(y||y==0)	el.style.top = y+'px';
+	}
+	function setOpacity(el,op){
+		if ($$.browser.IE)
+			el.style.filter = 'alpha(opacity='+op+')';
+		else
+			el.style.opacity = op/100;
+	}
+	function isHidden(element){
+		return element.offsetHeight == 0;
+	}
+	function sliceDown(element,range){
+		if(!element.nodeType)	return;
+		element.style.cssText='height:0px;display:block';
+		var timer=0,frame=50,pos=0,t=1;
+		timer = setInterval(function(){
+			var n = t;
+			pos = Math.ceil((n/=frame)*n*n*range);
+			element.style.height = pos+'px';
+			t++;
+			if(t>frame)	clearInterval(timer);
+		},10);
+	}
+	function toArray(list){
+		return Array.prototype.slice.apply(list);
+	}
+	function copyArray(arr){
+		return arr.slice(0);
+	}
+	function getPos(el){
+		var xy = scrollPos(),x = el.offsetLeft+xy[0],y = el.offsetTop+xy[1];
+		return [x,y];
+	}
+	function computeDistance(x,y){
+		return Math.sqrt(x*x+y*y);
+	}
+	
+		
+	var I = {
+		type: 'drag',
+		depart:'上海出发',
+		date: ['2009/07/30',11],
+		end:9,
+		preLength:72,
+		flights: [[1,'上海-北京'],[3,'上海-北京'],[8,'上海-北京'],[9,'上海-北京']],//第几天从1开始
+		hotel:[['c',2,2,2,'厕所',null],['c',2,0,5,'巨大厕所酒店',null],['c',3,2,4,'没有厕所酒店',null],['c',2,0,2,'不分男女厕所酒店',null]] 
+		//类型，默认，最少，最多，名称，关联 最少为0可以删除，最少<最多可以拉长，free可以拖拽
+	};
+	
+	var Journey = function(obj){
+		this.parent = $('main');
+		this.preLength=72;
+		this.opacity = 60;
+		this.type=obj.type;
+		this.start = obj.date[0];
+		this.len = obj.date[1];
+		this.depart = obj.depart;
+		this.flights = obj.flights;
+		this.hotel = obj.hotel;
+		this.end = obj.end;
+		this.init();
+	}
+	$extend(Journey.prototype,{
+		init:function(){
+			this.parent.innerHTML= this.drawTemplate();
+			if(this.type == 'fix'){
+				this.drawFlights();
+				this.drawHotels();
+				this.showEnd(this.end);
+			}else if(this.type=='drag'){
+				this.drawFlights();
+				this.drawHotels();this.attachHotelEvents();
+				this.showEnd(this.end);
+			}else if (this.type=='free'){
+				this.drawFlights();this.attachFlightEvents();
+				this.drawHotels();this.attachHotelEvents();
+				this.showEnd(this.end);
+			}
+			$(document.body).$('a').$each(function(a){a.onfocus = function(){a.blur();}});
+		},
+		drawTemplate:function(){
+			var template='<div class="divs"><h4>机票信息</h4><ul id="flights" style="width:{$pl}px;" class="flight">{$flights}</ul></div><div class="divs"><h4 style="background-image:none;line-height:40px;font-size:14px;">{$depart}</h4><ul style="width:{$pl}px;" class="calendar">{$calendar}</ul></div><div class="divs"><h4>酒店信息</h4><i>&nbsp;</i><ul style="width:{$pl}px;" id="hotel" class="hotel"></ul><i>&nbsp;</i></div><span id="start" class="flow">开始</span><span id="end" class="flow">结束</span>';
+			return template.replaceWith({pl:Math.round(this.preLength*this.len),calendar:this.drawCalendar()[0],flights:this.drawCalendar()[1],depart:this.depart});
+		},
+		drawCalendar:function(){
+			var template = '<li>{$date}<em>{$day}</em></li>',arr1=[],arr2=[],d = new Date(this.start),
+			day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+			for(var i=0;i<this.len;i++){
+				arr1.push(template.replaceWith({
+					date:this.toMonthDate(d),
+					day:day[d.getDay()]
+				}));
+				arr2.push('<li index="{$index}"></li>'.replaceWith({index:(i+1)}));
+				d.setDate(d.getDate()+1);
+			}
+			return [arr1.join(''),arr2.join('')];
+		},
+		toMonthDate:function(date){
+			return (date.getMonth()+1)+'-'+date.getDate();
+		},
+		getBox:function(n){
+			var arr = $('flights').$('li');
+			for(var i=0;i<arr.length;i++)
+				if(arr[i].getAttribute('index')==n)	return arr[i];
+		},
+		drawFlights:function(){
+			this.flights.each(function(pos,i){
+				var a = $extend($c('a'),{href:'javascript:void(0);',title:pos[1],index:pos[0],able:false,range:[],innerHTML:i});
+				if((i+1)==this.flights.length)	a.className='right';
+				this.getBox(pos[0]).appendChild(a);
+			}.bind(this));
+		},
+		attachFlightEvents:function(){
+			$('flights').$('a').$each(function(a,i){
+				if($$.browser.IE)	a.ondragstart = function(){return false;};
+				if(!a.range.length)	return;
+				a.$r('mousedown',function(e){
+					var newA = a.cloneNode(true),
+						dis=getMouse(e)[0]-a.$getPos()[0],
+						Y = a.$getPos()[1];
+					range = a.range.map(function(one){
+						return this.preLength*(one-1)+$('flights').$getPos()[0];
+					}.bind(this));
+					var now = newA.index = a.parentNode.getAttribute('index');
+					setPos(newA,a.$getPos()[0],Y);
+					setOpacity(newA,this.opacity);
+					newA.style.position="absolute";
+					setTimeout(function(){a.style.display='none';},0);
+					$('main').onmousemove = function(e){
+						var XY = getMouse(e);
+						if(XY[0]<=range[1]&&XY[0]>=range[0]){
+							var X = rPos(XY[0]-dis,this.preLength);
+							newA.index = Math.round(X/this.preLength)-1;
+							setPos(newA,X,Y);
+						}
+					}.bind(this);
+					document.onmouseup = function(e){
+						var XY = getMouse(e),lis = $('flights').$('li');
+						newA.parentNode.removeChild(newA);
+						a.style.display='';
+						$('main').onmousemove = null;
+						document.onmouseup = null;
+						a.range=[2,3];
+						this.flightTo(lis,a,now,newA.index);
+					}.bind(this);
+					$('flights').appendChild(newA);
+				}.bind(this));
+			}.bind(this));
+		},
+		flightTo:function(pa,a,now,to){
+			if(to<now||pa[now-1].$('a')[1]&&pa[now-1].$('a')[1]==a)
+				pa[to-1].appendChild(a);
+			else
+				pa[to-1].insertBefore(a,pa[to-1].firstChild);
+		},
+		drawHotels:function(){
+			var H = copyArray(this.hotel);
+			H.each(function(one,i){
+				var limit = this.configLimit(H[i]);
+				if(limit.relative&&(limit.relative<i))	limit.extend = false;
+				new Hotel(H[i].shift(),H[i],this.preLength,this.getRefer(i),limit);
+			}.bind(this));
+		},
+		configLimit:function(arr){
+			var obj = {
+				drag:this.type=='free'?true:false,
+				remove:arr[2]<=0?true:false,
+				extend:(arr[2]<arr[3]?true:false),
+				eRange:[arr[2],arr[3]],
+				relative:arr[5]
+			};
+			return  obj;
+		},
+		getRefer:function(n){
+			var range = this.getRange(n),F = this.flights;
+			for(var i=0;i<F.length;i++){
+				if(range[0]<F[i][0]<=range[1])	return F[i];
+			}
+		},
+		getRange:function(n){
+			var H = this.hotel,add=0;
+			for(var i=0;i<H.length;i++){
+				if(i==n)	return [add,add+H[i][1]];
+				add=add+H[i][1];
+			}
+		},
+		showEnd:function(n){
+			var start = $('start'),end=$('end');
+			start.style.display='block';
+			end.style.cssText='left:'+(parseInt(cssStyle(start,"left"))+I.preLength*n)+'px;display:block;';
+		},
+		attachHotelEvents:function(){
+			var as = $('hotel').$('div');
+			as.$each(function(a,i){
+				this.attachHotel(a);
+			}.bind(this));
+		},
+		attachHotel:function(a){
+			a.onmouseover = function(){
+				var ch = a.childNodes;
+				for(var i = 0;i<ch.length;i++){
+					if(/SMALL/.test(ch[i].tagName)&&a.parentNode._remove){
+						ch[i].style.display='block';
+						ch[i].style.cursor='pointer';
+					}
+					else if(/EM/.test(ch[i].tagName)&&a.parentNode._extend!=false){
+						ch[i].style.display='block';
+						ch[i].style.cursor='e-resize';
+					}
+					//else if(/P/.test(ch[i].tagName)&&a.parentNode._drag)
+						//ch[i].style.cursor='move';
+				}
+			};
+			a.onmouseout = function(){
+				var ch = a.childNodes;
+				for(var i = 0;i<ch.length;i++){
+					if(/SMALL|EM/i.test(ch[i].tagName))
+						ch[i].style.display='none';
+				}
+			};
+			a.$r('mousedown',function(e){
+				var aim = $fixE(e).$target,pa = a.parentNode;
+				switch (aim.tagName)
+			   {
+			   case 'SMALL':
+				if(pa._rubbish){
+					pa.parentNode.replaceChild(pa._rubbish,pa);
+					pa._rubbish = pa;
+				}
+				else{
+					var el = new Hotel(pa._type=="f"?'c':'f',[pa._leng,pa._min,pa._max,pa._name],this.preLength,null,setLimit(pa._limit,'drag',false),pa),
+					tagA = el.$('div')[0];
+					el._rubbish = pa;pa.parentNode.removeChild(pa);
+					this.attachHotel(tagA);el.onfocus = function(){el.blur();};
+				}
+				 break;
+			   case 'P':
+				 break;
+			   case 'EM':
+					if (pa._relative){
+						var XY = getMouse(e),
+							wid = parseInt(pa.style.width),
+							rel = $('hotel').$('li')[pa._relative],
+							relText = rel.$('p')[0],
+							paText = pa.$('p')[0],
+							rWid = parseInt(rel.style.width);
+						if($$.browser.IE)	a.ondragstart = function(){return false;};
+						$('hotel').onmousemove = function(e){
+							var x = getMouse(e)[0],
+							n2 = roundPos(rWid - (x-XY[0]),this.preLength),
+							n1 = roundPos(wid + (x-XY[0]),this.preLength),
+							pn = n1*this.preLength,
+							rn = n2*this.preLength;
+							if(n1>=pa._eRange[0]&& n1<=pa._eRange[1]&&n2>=rel._eRange[0]&&n2<=rel._eRange[1]){
+								rel.style.width = rn+'px';
+								pa.style.width = pn+'px';
+								relText.innerHTML = '酒店('+n2+')';
+								paText.innerHTML = '酒店('+n1+')';
+							}
+						}.bind(this);
+						document.onmouseup = function(){
+							$('hotel').onmousemove = null;
+							document.onmouseup = null;
+						};
+					}
+					else{
+						var XY = getMouse(e),
+							wid = parseInt(pa.style.width),
+							paText = pa.$('p')[0],
+							lis = $('hotel').$('li'),
+							pos=getMyPos(pa,lis),
+							flights = $('flights').$('a'),
+							rel = getRelative(pos,flights);
+							for(var j=0;j<flights.length;j++){
+								var index = flights[j].parentNode.getAttribute('index');
+									flights[j]._dis = index - pos; 
+							}
+						if($$.browser.IE)	a.ondragstart = function(){return false;};
+						$('hotel').onmousemove = function(e){
+							var x = getMouse(e)[0],
+							n1 = roundPos(wid + (x-XY[0]),I.preLength),
+							pn = n1*I.preLength,
+							total = 0,
+							pos2 = 0;
+							if(n1>=pa._eRange[0]&& n1<=pa._eRange[1]){
+								var pp = pa._leng;
+								pa._leng = n1;
+								total = getTotal(lis);
+								if(total>I.date[1])	return	pa._leng = pp;
+								pos2 = getMyPos(pa,lis);
+								for(var i = 0;i<rel.length;i++){
+									var index = rel[i].parentNode.getAttribute('index');
+									this.flightTo($('flights').$('li'),rel[i],index,pos2+rel[i]._dis);
+								}
+								pa.style.width = pn+'px';
+								if(pa._type=='c')	paText.innerHTML = '酒店('+n1+')';
+								I.end = total;
+								this.showEnd(total);
+							}
+						}.bind(this);
+						document.onmouseup = function(){
+							$('hotel').onmousemove = null;
+							document.onmouseup = null;
+						};
+					}
+				 break;
+			   default:
+				break;
+				}
+				
+			}.bind(this));
+		}
+	});
+	var Hotel = function(type,array,len,refer,limit,pos){
+		this.type = type;
+		this.len = len;
+		this.leng = array[0];
+		this.min = array[1];
+		this.max = array[2];
+		this.name = array[3];
+		this.relative = array[4];
+		this.limit = limit;
+		this.extend = limit.extend;
+		this.remove = limit.remove;
+		this.eRange = limit.eRange;
+		this.drag = limit.drag;
+		this.refer = refer;
+		this.parent = $('hotel');
+		this.pos = pos;
+		return this.init();
+	}
+	$extend(Hotel.prototype,{
+		init:function(){
+			return  this.drawHotel();
+		},
+		drawHotel:function(){
+			var li = $c('li'),
+			template='<div class="{$type}"><small>&nbsp;</small><p>{$d}</p><em>&nbsp;</em></div><span>{$name}</span>';
+			li.style.width=(this.leng*I.preLength)+'px';
+			$extend(li,{
+				_remove:this.remove,
+				_drag:this.drag,
+				_extend:this.extend,
+				_refer:this.refer,
+				_type:this.type,
+				_leng:this.leng,
+				_limit:this.limit,
+				_name:this.name,
+				_max:this.max,
+				_relative:this.relative,
+				_eRange:this.eRange
+			})
+			if(this.pos)
+				this.parent.insertBefore(li,this.pos);
+			else
+				this.parent.appendChild(li);
+			li.innerHTML=template.replaceWith({
+				type:this.type=='f'?'free':'ctrip',
+				d:this.type=='f'?'酒店自理':'酒店'+'('+this.leng+')',
+				name:this.name
+			});
+			return li;
+		}
+	});
+	new Journey(I);
+	function drawTab(e){
+		var XY = getMouse(e), elXY = getPos(this),flyer,r = 15,flag = [],
+			pos = [],type = this.className;
+		flow = this.cloneNode(true);
+		flow.style.cssText = 'position:absolute;margin:0';
+		setOpacity(flow,60);
+		flow.id= 'flower';
+		setPos(flow,elXY[0],elXY[1]);
+		pos = getleftTop();
+		$('journey').onmousemove = function(e){
+			var mX = getMouse(e)[0],mY = getMouse(e)[1];
+			var x = mX -XY[0]+elXY[0],y = mY -XY[1]+elXY[1];
+			setPos(flow,x,y);
+			if(I.end>=I.date[1])	return;
+			onHotel(mX,mY);
+		};
+		$('journey').onmouseup = function(e){
+			if(flyer&&flyer.element){
+				var el = new Hotel(type=='free'?'f':'c',[1,1,100,'',null],I.preLength,null,{drag:false,remove:true,extend:true,eRange:[1,100],relative:null},flyer.element.parentNode);
+				flyer.element.parentNode.style.marginLeft = '0px';
+				flyer = null;
+				Journey.prototype.attachHotel(el.$('div')[0])
+			}
+			else if(flyer){
+				var el = new Hotel(type=='free'?'f':'c',[1,1,100,'',null],I.preLength,null,{drag:false,remove:true,extend:true,eRange:[1,100],relative:null},null);
+				flyer = null;
+				Journey.prototype.attachHotel(el.$('div')[0]);
+			}
+			flow.parentNode.removeChild(flow);
+			$('journey').onmousemove = null;
+			$('journey').onmouseup = null;
+		};
+		$('button').appendChild(flow);
+		
+		function getleftTop(){
+			var hotels = $('hotel').$('div'),arr = [];
+			for(var i = 0;i<hotels.length;i++){
+				var ran = getPos(hotels[i]);
+					ran.element = hotels[i];
+				arr.push(ran);
+			}
+			arr.push([parseInt(cssStyle($('start'),"left"))+I.preLength*I.end,parseInt(cssStyle($('start'),"top"))-15]);
+			return arr;
+		}
+		function onHotel(x,y){
+			for(var i = 0;i<pos.length;i++){
+				if(computeDistance(x-pos[i][0],y-pos[i][1]-10)<r&&!flyer){
+					if(pos[i].element){
+						pos[i].element.parentNode.style.marginLeft = '72px';
+						
+						onHotel.rel = getRelative(getMyPos(pos[i].element.parentNode.previousSibling,$('hotel').$('li')),$('flights').$('a'));
+						for(var j = 0,rel = onHotel.rel;j<rel.length;j++){
+							var index = parseInt(rel[j].parentNode.getAttribute('index'));
+							Journey.prototype.flightTo($('flights').$('li'),rel[j],index,index+1);
+						}
+					}
+					flyer = pos[i];
+					I.end++;
+					Journey.prototype.showEnd(I.end);
+					return;
+				}
+				else if(flyer){
+					if(computeDistance(x-flyer[0],y-flyer[1]-10)<r){
+						return;
+					}else{
+						if(flyer.element){
+							for(var j = 0,rel = onHotel.rel;j<rel.length;j++){
+								var index = parseInt(rel[j].parentNode.getAttribute('index'));
+								Journey.prototype.flightTo($('flights').$('li'),rel[j],index,index-1);
+							}
+							flyer.element.parentNode.style.marginLeft = '0px';
+						}
+						flyer = null;
+						I.end--;
+						Journey.prototype.showEnd(I.end);
+					};
+				};
+			};
+		};
+	};
+	function getTotal(lis){
+	var total = 0;
+		for(var i = 0;i<lis.length;i++){
+			total+=lis[i]._leng;
+		}
+		return total;
+	}
+	function getRelative(p,arr){
+		var array = [];
+		for(var i = 0;i<arr.length;i++){
+			if(arr[i].parentNode.getAttribute('index')>=p)
+				array.push(arr[i]);
+		}
+		return array;
+	}
+	function getMyPos(li,lis){
+		var pos =0;
+		for(var i = 0;i<lis.length;i++){
+			pos+=lis[i]._leng;
+			if(li == lis[i])	return pos;
+		}
+		return 0;
+	}
+	function setLimit(obj,key,val){
+		obj[key] = val;
+		return obj;
+	}
+	function roundPos(p,r){
+		return Math.round(parseInt(p)/r); 
+	}
+	(function(){
+		$('button').$('div').$each(function(el){
+			el.onmousedown = drawTab;
+			if($$.browser.IE)
+				el.ondragstart = function(){return false;};
+		});
+	})();
+	
+	
+</script>

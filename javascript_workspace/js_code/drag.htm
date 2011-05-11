@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<style>
+	body{
+		font-family:'黑体';
+	}
+	.tab{
+		background:gray;
+		width:100%;
+		height:100px;
+	}
+	.flow{
+		background:gray;
+		width:100%;
+		height:60px;
+		border:1px solid black;
+	}
+	.tab a{
+		float:left;
+		margin:29px 0 0 50px;
+		width:80px;
+		height:40px;
+		background:#5B667C;
+		text-align:center;
+		color:white;
+		line-height:40px;
+		font-weight:bold;
+		border:solid 1px white;
+		text-decoration:none;
+	}
+	.tab a:hover{
+		cursor:move;
+	}
+	.flow span{
+		display:block;
+		margin:2.5px auto 0;
+		width:100px;
+		height:40px;
+		background:#5B667C;
+		text-align:right;
+		color:white;
+		line-height:16px;
+		font-weight:bold;
+		border:solid 1px white;
+		overflow:hidden;
+	}
+	.flow span a{
+		text-decoration:none;
+		color:black;
+		font-size:12px;
+		margin:0px 0px 0 18px;
+		border:1px solid black;
+		padding:0 5px;
+		background:white;
+		float:right;
+	}
+	.flow div{
+		float:left;
+		height:48px;
+		border:1px solid blue;
+		margin-top:5px;
+		position:relative;
+	}
+	.flow div .a,.flow div strong{
+		overflow:hidden;
+		position:absolute;
+		width:10px;
+		background:red;
+		height:10px;
+		top:55px;
+		right:-6px;
+		cursor:e-resize;
+	}
+	.flow span em{
+		font-style:normal;
+		margin-top:10px;
+		float:right;
+	}
+	.flowA{
+		position:absolute;
+		z-index:100;
+		width:80px;
+		height:40px;
+		display:block;
+		background:#5B667C;
+		text-align:center;
+		color:white;
+		font-weight;bold;
+		border:1px solid white;
+		text-decoration:none;
+		line-height:40px;
+	}
+	.flowA:hover{
+		cursor:move;
+	}
+	#back{
+		margin-top:10px;
+		width:100%;
+		height:15px;
+		border-bottom:1px solid black;
+		font-size:12px;
+		line-height:15px;
+	}
+	#back div{
+		float:left;
+		width:119px;
+		border-left:1px solid black;
+	}
+
+	
+</style>
+
+</head>
+
+<body style='margin:0;padding:0'>
+	<div id = 'tab' class='tab'>
+		<a id='xxx' href='javascript:void(0);'>飞机</a>
+		<a href='javascript:void(0);'>酒店</a>
+		<a href='javascript:void(0);'>自理</a>
+	</div>
+	<div id = 'back'>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+		<div>9</div>
+		<div>0</div>
+	</div>
+	<div id='flow' class ='flow'>
+		
+	</div>
+	<!--<div style="width:100px;">
+		<strong style="position:absolute;width:10px;background:red;height:10px;margin-left:100px;margin-top:55px;"></strong>
+	</div>-->
+		
+</body>
+</html>
+<script type="text/javascript">
+//document.selection.createRange().text 选中的文字
+//document.selection.type 
+//window.getSelection() ie不行
+ //document.oncontextmenu=function(e){return   false;}   
+	function $(arg){
+		return document.getElementById(arg);
+	}
+	var config = C = {
+		opacity:50,
+		DX:0,
+		DY:0,
+		mover:null,
+		flag:null,
+		tripMark:[['f',1,1,1],['h',2,1,4],['f',1,1,1],['h',2,1,3],['f',1,1,1]]
+	}
+	
+	var topic = {
+		f:'飞机',
+		h:'酒店',
+		m:'自理'
+	}
+	
+	function isIE(){
+		return !!document.all;
+	}
+	function isFF(){
+		return navigator.userAgent.match(/Mozilla/i)&&!navigator.userAgent.match(/compatible|WebKit/i);
+	};
+	function fix(e){
+		return window.event||e;
+	}
+	function extend(a){
+		for(var i = 1; i < arguments.length; i ++){
+			var b = arguments[i];
+			for(var s in b) if(b.hasOwnProperty(s)) a[s] = b[s];
+		}
+		return a;
+	}
+	function each(arr,func){
+		for (var i=0;i<arr.length;i++)
+			if ((func?func(arr[i],i):arr[i]())===false) return false;
+		return true;
+	};
+	function target(e){
+		var evt = fix(e);
+		return evt.srcElement||evt.target;
+	}
+	function addEvent(el,evt,fn){
+		if('attachEvent' in el)
+			el.attachEvent('on'+evt,fn);
+		else
+			el.addEventListener(evt,fn,false);
+	}
+	function stopEvent(e,flag){
+		e=fix(e);
+		flag=flag||0;
+		if (flag>=0) e.preventDefault?e.stopPropagation():(e.cancelBubble=true);
+		if (flag!=0) e.preventDefault?e.preventDefault():(e.returnValue=false);
+	}
+	function scrollPos(){
+		var htm = document.documentElement,bod = document.body;
+		return [htm.scrollLeft||bod.scrollLeft||0,htm.scrollTop||bod.scrollTop||0];
+	}
+	function mousePos(e){
+		var e = fix(e),tar = target(e),xy = scrollPos();
+		x = e.pageX || (e.clientX + xy[0]);
+		y = e.pageY || (e.clientY + xy[1]);
+		return [x,y];
+	}
+	function getPos(el){
+		var xy = scrollPos(),x = el.offsetLeft+xy[0],y = el.offsetTop+xy[1];
+		return [x,y];
+	}
+	function setPos(el,pos){
+		el.style.left = pos[0]+'px';
+		el.style.top = pos[1]+'px';
+	}
+	function drawTab(e){
+		var XY = mousePos(e), elXY = getPos(this),
+		flow = this.cloneNode(true);
+		stopEvent(e,2);
+		if (/MSIE/.test(navigator.userAgent))
+			flow.style.filter = 'alpha(opacity='+C.opacity+')';
+		else
+			flow.style.opacity = C.opacity/100;
+		flow.className = 'flowA'
+		C.mover = flow;
+		setPos(flow,elXY);
+		C.DX = XY[0]-elXY[0],C.DY = XY[1]-elXY[1];
+		document.onmousemove = movingTab;
+		flow.onmouseout = movingTab;
+		flow.onmouseup = posTab;
+		document.body.appendChild(flow);
+	}
+	function inElement(e,el){
+		var xy = getPos(el),
+			mxy = mousePos(e),
+		W = el.offsetWidth,H = el.offsetHeight;//这个位置不准，要修改
+		if((mxy[0]<xy[0]+W) && (mxy[0]>xy[0]) && (mxy[1]<xy[1]+H) && (mxy[1]>xy[1]))
+			return true;
+		return false;
+	}
+	function movingTab(e){
+		C.mover.style.left = mousePos(e)[0]-C.DX+'px';
+		C.mover.style.top = mousePos(e)[1]-C.DY+'px';
+	}
+	function posTab(e){
+		var el = inWhich(e);
+		if(el){
+			var span = document.createElement('span'),att = el.getAttribute('stu');
+			if(att == 'full'){
+				el.replaceChild(span,el.getElementsByTagName('span')[0]);
+			}else{
+				el.appendChild(span);
+				el.setAttribute('stu','full');
+			}
+			span.innerHTML = '<a onclick=\'this.parentNode.parentNode.setAttribute("stu","empty");this.parentNode.parentNode.removeChild(this.parentNode);\' href="javascript:void(0);">C</a><em>'+this.innerHTML+'</em>';
+		}
+		C.mover.parentNode.removeChild(C.mover);
+		document.onmousemove = null;
+	}
+	function inWhich(e){
+		var divs = $('flow').getElementsByTagName('div')
+		for(var i = 0;i<divs.length;i++){
+			if(inElement(e,divs[i])) return divs[i];
+		}
+		return null;
+	}
+	function roundPos(pos){
+		return Math.round(parseInt(pos)/119.5)*119.5;
+	}
+	function createElement(tag,style){
+		var el = document.createElement(tag);
+		extend(el.style,style);
+		return el;
+	}
+	function filterByClass(tag,cls){
+		var arr =[];
+		each(tag,function(el){
+			if(el.className==cls)	arr.push(el);
+		})
+		return arr;
+	}
+	//initialize
+	
+	(function(){
+		each($('tab').getElementsByTagName('a'),function(el){
+			el.onmousedown = drawTab;
+			if(isIE())
+				el.ondragstart = function(){return false;};
+		});
+	})();
+	
+	(function(){
+		for(var i = 0;i<C.tripMark.length;i++){
+			var el = createElement('div',{width:(120*C.tripMark[i][1]-2)+'px'});
+			$('flow').appendChild(el);
+			if(isFF())
+				el.innerHTML='<strong>&nbsp;</strong><span><a onclick=\'this.parentNode.parentNode.setAttribute("stu","empty");this.parentNode.parentNode.removeChild(this.parentNode);\' href="javascript:void(0);">C</a><em>'+topic[C.tripMark[i][0]]+'</em></span>';
+			else
+				el.innerHTML='<a class="a" href="javascript:void(0);">&nbsp;</a><span><a onclick=\'this.parentNode.parentNode.setAttribute("stu","empty");this.parentNode.parentNode.removeChild(this.parentNode);\' href="javascript:void(0);">C</a><em>'+topic[C.tripMark[i][0]]+'</em></span>';
+			el.setAttribute('stu','full');
+		}
+	})();
+	(function(){
+		var arr = isFF()?$('flow').getElementsByTagName('strong'):filterByClass($('flow').getElementsByTagName('a'),'a');
+		each(arr,function(el,i){
+			el.onmousedown = function(e){
+				C.flag = el.parentNode;
+				var _this = this,dis = mousePos(e)[0],W = parseInt(this.parentNode.style.width);
+			document.onmousemove = function(e){extend(_this.parentNode.style,{
+				width:mousePos(e)[0]-dis+W+'px',
+				borderColor:'red'
+			});};};
+			if(isIE())
+				el.ondragstart = function(){return false;};
+		});
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			if(C.flag != null){
+				C.flag.style.width = roundPos(C.flag.style.width)+'px';
+				C.flag.style.borderColor = 'black';
+			}
+			C.flag = null;
+		}
+	})();
+$('xxx').ondragstart = function(){alert(0)}
+$('xxx').ondrag = function(){alert(1)}
+$('xxx').ondragend = function(){alert(2)}
+</script>

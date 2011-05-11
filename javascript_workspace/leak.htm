@@ -1,0 +1,14 @@
+<html>
+     	<body>
+     	<script type="text/javascript">
+     	document.write("circular references between JavaScript and DOM!");
+     	var obj;
+     	window.onload = function(){
+		obj=document.getElementById("DivElement");
+            	document.getElementById("DivElement").expandoProperty=obj;
+            	obj.bigString=new Array(1000).join(new Array(2000).join("XXXXX"));
+            	};
+     	</script>
+     	<div id="DivElement">Div Element</div>
+     	</body>
+     	</html>

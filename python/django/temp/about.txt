@@ -1,0 +1,15 @@
+新建过滤器的步骤：
+1.新建模板app
+2.新建文件夹templatetags
+3.新建__init__.py
+4.新建过滤器文件。
+5.参照myfilter.py
+调用：
+1.首先{{ load myFilter}}
+2.调用filter 参照form.html
+
+
+新建模板标签：
+1,2,3,4同过滤器
+5.参照tags
+调用:同过滤器

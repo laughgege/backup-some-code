@@ -1,0 +1,3 @@
+ui_ip 192.168.83.56  port 1000
+mysql_table dfat_django
+mysql: root,p@ssw0rd!@#

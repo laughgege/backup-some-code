@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <style>
+            td {
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+            }
+        </style>
+        <script type='text/javascript' src="jquery.js" charset="UTF-8">
+        </script>
+    </head>
+    <script>
+    </script>
+    <body style='min-width: 960px;'>
+        <div saver1='dddddd' saver2='ddddddd'>
+        </div>
+        <div id="t" style="background:red">
+            tryError
+        </div>
+        <div>
+            <div>
+                http://blog.csdn.net/dcju002/archive/2009/02/12/3881835.aspx
+            </div>
+        </div>
+    </body>
+    </html>
+<script>
+    
+    //function trackEvent(NULL,NULL,NULL,NULL,e){
+    //if(!e) return;
+    //ie  	name message
+    //ff  	name message lineNumber fileName stack
+    //chrome  name message 					  arguments
+    //safari  name message line sourceURL
+    //opera	       message{ message, line, Backtrace}	 line从脚本开始开始算 
+    //}
+	
+    function floorArray(arr, i){
+        if (!i || $type(arr) != 'array') 
+            return [];
+        for (var p = 1; p <= i; p++) {
+            var n = [], m = [];
+            for (var j = 0; j < arr.length; j++) {
+                if ($type(arr[j]) != 'array') 
+                    n.push(arr[j]);
+                else 
+                    m = m.concat(arr[j]);
+            }
+            arr = m;
+        }
+        return n;
+    }
+    
+    function $XP(str, el){
+        if ((typeof str != 'string') || str == "") 
+            return el;
+        var a = str.split('#'), s = [], m = [], ele;
+        s = a[a.length - 1].split('/');
+        if (s[0] == "") 
+            s.shift();
+        m = s.shift().match(/([^\[\]]+)(?:\[(\d+)\])?/);
+        
+        if (a.length == 1) 
+            ele = el ? $(el).$(m[1])[m[2] || 0] : document.$(m[1])[m[2] || 0];
+        else 
+            ele = $(m[1]);
+        
+        return $XP(s.join('/'), ele);
+    }
+    
+    function CheckSilverlightInstalled(){
+        var isSilverlightInstalled = false;
+        try {
+            try {
+                var slControl = new ActiveXObject('AgControl.AgControl');//检查IE
+                isSilverlightInstalled = true;
+            } 
+            catch (e) {
+                if (navigator.plugins["Silverlight Plug-In"]) //检查非IE
+                {
+                    isSilverlightInstalled = true;
+                }
+            }
+        } 
+        catch (e) {
+        }
+        return isSilverlightInstalled;
+    }
+</script>

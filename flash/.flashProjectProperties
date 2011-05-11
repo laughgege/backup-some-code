@@ -1,0 +1,20 @@
+<projectDescription>
+  <id>1264209377041</id>
+  <name>blog</name>
+  <asVersion>0</asVersion>
+  <boundTemplate>file:///C|/Users/YAN/AppData/Local/Adobe/Flash CS4/zh_CN/Configuration/Project/templates/boundClass_as3.as</boundTemplate>
+  <classTemplate>file:///C|/Users/YAN/AppData/Local/Adobe/Flash CS4/zh_CN/Configuration/Project/templates/standardClass_as3.as</classTemplate>
+  <classPath>.</classPath>
+  <defaultApp>file:///C|/Users/YAN/Desktop/flash/blog.fla</defaultApp>
+  <rootURI>file:///C|/nyanhan/flash/</rootURI>
+  <flexSDK/>
+  <sources editable="false"/>
+  <libraries editable="false"/>
+  <externalLibraries editable="false"/>
+  <compileList editable="false"/>
+  <recentFiles editable="false">
+    <uri label="main.as">file:///C|/nyanhan/flash/main.as</uri>
+    <uri label="card.as">file:///C|/nyanhan/flash/card.as</uri>
+  </recentFiles>
+  <locations editable="false"/>
+</projectDescription>

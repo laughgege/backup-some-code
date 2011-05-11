@@ -1,0 +1,160 @@
+﻿<!doctype html> 
+<html> 
+<head> 
+<meta charset="utf-8" />
+<style type="text/css">
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,em,button{margin:0;padding:0;}
+body{font-size:12px;line-height:1.6;font-family:Simsun,sans-serif;color:#000;width:100%;background:#FFF;text-align:center;}
+.main{
+	width:960px;
+	margin:0 auto;
+	border:1px solid black;
+}
+h1{
+	font-size:24px;
+	margin-bottom:10px;
+}
+.content {
+	vertical-align:middle;
+}
+.content th{
+	padding-right:10px;
+	text-align:right;
+	height:30px;
+}
+.content td{
+	text-align:left;
+	width:700px
+}
+.content input{
+	width:200px;
+}
+.title{
+	margin-left:80px;
+	font-size:14px;
+	font-weight:bold;
+	color:block;
+}
+.content-box{
+	margin:10px 50px 50px 50px;
+}
+.content-box th{
+	height:100px;
+	width:20px;
+	padding:10px;
+	border-bottom:1px dashed black;
+}
+.content-box td{
+	border-bottom:1px dashed black;
+	width:800px;
+}
+.content-box textarea{
+	width:100%;
+	height:60px;
+}
+
+</style>
+<script src="http://webresource.ctrip.com/code/js/tuna_071206.js" charset="utf-8" type="text/javascript"></script> 
+</head>
+<body>
+<div class="main">
+<form enctype="multipart/form-data" action="/oregon/post/" method="post">
+	<h1>俄勒冈申请需求表</h1>
+	<table class="content">
+		<tr>
+			<th style="width:150px;">项目名称：</th>
+			<td><input type="text" value="" id="project" name="project" /></td>
+		</tr>
+		<tr>
+			<th>使用者团体组：</th>
+			<td><input type="text" value="" id="user" name="user" /></td>
+		</tr>
+	</table>
+	<fieldset class="content-box">
+	    <legend class="title">项目建议描述:</legend>
+		<table  cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<th>基本问题</th>
+				<td><textarea id="point" name="point"></textarea></td>
+			</tr>
+			<tr>
+				<th>建议</th>
+				<td><textarea id="suggest" name="suggest"></textarea></td>
+			</tr>
+			<tr>
+				<th>模式</th>
+				<td><textarea id="patterns" name="patterns"></textarea></td>
+			</tr>
+			<tr>
+				<th>诊断</th>
+				<td><textarea id="diagnose" name="diagnose"></textarea></td>
+			</tr>
+			<tr>
+				<th>投资规模</th>
+				<td><textarea id="scale" name="scale"></textarea></td>
+			</tr>
+			<tr>
+				<th style="border:0">附件</th>
+				<td style="border:0;vertical-align:middle;text-align:left;">
+					<input id="add" type="button" value="+添加附件" />
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2" style="width:100%;">
+					<input type="submit" text="提交" id="submit" />
+				</th>
+			</tr>
+		</table>
+	</fieldset>
+</form>
+</div>
+</body>
+<script type="text/javascript">
+	var fileIndex = 0;
+	$("add").$r("click",function(){
+		var file = $c("input");
+		file.type = "file";
+		file.name = "file"+(fileIndex++);
+		this.parentNode.insertBefore(file, this);
+	});
+	document.forms[0].onsubmit = function(){
+		var project = $("project");
+		var user = $("user");
+		var point = $("point");
+		var suggest = $("suggest");
+		var patterns = $("patterns");
+		var diagnose = $("diagnose");
+		var scale = $("scale");
+		
+		if(project.isNull()){
+			$alert(project, "不能为空");
+			return false;
+		}
+		if(user.isNull()){
+			$alert(user, "不能为空");
+			return false;
+		}
+		if(point.isNull()){
+			$alert(point, "不能为空");return false;
+			
+		}
+		if(suggest.isNull()){
+			$alert(suggest, "不能为空");
+			return false;
+		}
+		if(patterns.isNull()){
+			$alert(patterns, "不能为空");
+			return false;
+		}
+		if(diagnose.isNull()){
+			$alert(diagnose, "不能为空");
+			return false;
+		}
+		if(scale.isNull()){
+			$alert(scale, "不能为空");return false;
+		}
+			
+		return true;
+	}
+</script>
+</html>

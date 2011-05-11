@@ -1,0 +1,54 @@
+<html>
+<head>
+	<script src = "" charset="utf-8"></script>
+</head>
+<body></body>
+</html>
+<script type="text/javascript">
+
+var Yan = new Class({
+	//继承已有的类，继承Options类才有了setOptions方法。
+	Implements: Options,
+	
+	options : {
+		option_one : "DEFAULT_1",
+		option_two : "DEFAULT_2",    
+	},
+
+	initialize : function(arg){//这个参数写死是this.options
+		this.setOptions(arg);
+		this.show_options();
+	},
+	
+	show_options : function(){
+	
+	},
+	
+	swap_options : function(){
+		this.setOptions({
+			option_one : this.options.option_two,
+			option_two : this.options.option_one
+		})
+	}
+});
+var Han = new Class({
+	Extends:Yan, //Implements 和 Extends的区别，用extend 子类可以覆盖父类中的方法，但是implement 父类覆盖子类
+	options: {
+		option_one:1,
+		option_two:2
+	},
+	initialize:function(a){//两个返回的结果都相同，都是当前类的options
+		this.parent(a);
+		this.show_options();
+	},
+	show_options : function(){
+		
+	}
+});
+
+Yan.implement({
+	
+});
+ 
+    var text = new Han();
+</script>

@@ -1,0 +1,21 @@
+#console_box *{font-size:14px; font-family:arial, simsun; color:#545454;}
+#console_box div, #console_box span, #console_box h4, #console_box h5, #console_box ul, #console_box li{ margin: 0; padding:0;}
+#console_box{ width:100%; overflow:hidden;  border:1px solid #c5c5c5; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
+
+#console_box h4{height:22px;background:url(img/console_icon.png) repeat-x 0 -48px; -webkit-border-radius: 5px 5px 0px 0px; -moz-border-radius: 5px 5px 0px 0px; border-radius: 5px 5px 0px 0px; line-height:22px; font-weight:normal;  text-indent: 12px;}
+
+#console_box h5{height:22px;background:url(img/console_icon.png) repeat-x 0 -80px; -webkit-border-radius: 0px 5px 5px 5px; -moz-border-radius: 0px 5px 5px 5px; border-radius: 0px 5px 5px 5px;}
+
+#console_box_inner{height:200px; list-style:none; overflow-y: scroll;}
+
+#console_box h5 a{float:right; text-decoration:none; width: 16px; height: 16px; margin: 3px 3px 0 0; background:url(img/console_icon.png) repeat-x 0 -112px; }
+
+#console_box h5 a:hover{text-decoration:none; cursor:move;}
+
+#console_box li{height:16px; line-height:16px; text-indent:32px;margin:3px 0; white-space: nowrap; overflow:hidden;background-image:url(img/console_icon.png); background-repeat:no-repeat; background-position: 10000px 10000px;}
+#console_box li:hover{background-color:#ccc;}
+
+#console_box li.info{background-position: 10px 0;}
+#console_box li.warn{background-position: 10px -16px;}
+#console_box li.error{background-position: 10px -32px; color: red;}
+#console_box li.separate{height:2px; overflow:hidden; border-top:1px solid #c5c5c5; margin:0 8px;}

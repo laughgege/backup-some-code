@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>detail</title>
+	<meta http-equiv="content-type" content="text/html; charset=gb2312" />
+	<link  href="style.css" rel="stylesheet" type="text/css" />
+	<link  href="css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery-1.3.2.min.js" charset="utf-8" type="text/javascript"></script>
+	<script src="js/jquery-datepicker.js" charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="main">
+	<div class="head"><h1>机票订单满仓率</h1></div>
+	<div class="body">
+	    <div class="legend"><span class="green">正常</span><span class="yellow">警戒</span><span class="red">警报</span></div>
+	    <fieldset class="container">
+	        <legend class="title">子指标</legend>
+	        <a title="解释这个指标，他是什么就解释什么好了。想写啥就写啥好了 " class="red_btn" href="javascript:void(0);">SOA MSMQ排队</a>
+            <a title="解释这个指标，他是什么就解释什么好了。想写啥就写啥好了 " class="red_btn" href="javascript:void(0);">SOA MSMQ排队</a>
+	        <a title="解释这个指标，他是什么就解释什么好了。想写啥就写啥好了 " class="yellow_btn" href="javascript:void(0);">SOA MSMQ排队</a>
+	        <a title="解释这个指标，他是什么就解释什么好了。想写啥就写啥好了 " class="green_btn" href="javascript:void(0);">SOA MSMQ排队</a>
+	         <a title="解释这个指标，他是什么就解释什么好了。想写啥就写啥好了 " class="red_btn" href="javascript:void(0);">SOA MSMQ排队</a>
+	        <a title="解释这个指标，他是什么就解释什么好了。想写啥就写啥好了 " class="yellow_btn" href="javascript:void(0);">SOA MSMQ排队</a>
+	    </fieldset>
+	    <div class="chart">
+	        <div class="chart_title">
+	            <div class="left">
+	                <a id="trend_btn" class="current" href="javascript:void(0);">趋势图</a>
+	                <a id="compare_btn" href="javascript:void(0);">对比</a>
+	            </div>
+	            <div class="right">
+	            <select>
+			        <option>柱状图</option>
+			        <option>曲线图</option>
+		        </select>
+				<select>
+			        <option>柱状图</option>
+			        <option>曲线图</option>
+		        </select>
+		        </div>
+	        </div>
+	        <div class="chart_body">
+	            <div id="trend" class="trend">
+	                <strong>结束日期</strong><input id="trend_end" type="text" value=""/>
+	                <strong>天数</strong><select>
+	                    <option>1</option>
+	                    <option>2</option>
+	                    <option>3</option>
+	                    <option>4</option>
+	                    <option>5</option>
+	                    <option>6</option>
+	                    <option>7</option>
+	                    <option>8</option>
+	                </select>
+	                <strong>频率</strong><select>
+	                    <option>10分钟</option>
+	                    <option>30分钟</option>
+	                    <option>1小时</option>
+	                    <option>1天</option>
+	                </select>
+	                <input type="submit" class="submit" value="确&nbsp;&nbsp;&nbsp;&nbsp;认" />
+	            </div>
+	            <div style="display:none;" id="compare" class="compare">
+	                <strong>日期</strong>
+	                <input id="compare_start" type="text" value=""/>
+	                <input id="compare_end" type="text" value=""/>
+	                <input type="submit" class="submit" value="确&nbsp;&nbsp;&nbsp;&nbsp;认" />
+	            </div>
+				<div class="domestic_legend"><span><em style="background-color:red">&nbsp;</em>2001-10-10</span><span><em style="background-color:red">&nbsp;</em>2001-10-10</span></div>
+	            <input id="current" type="hidden" value="compare" />
+	            <img src="" alt="image" />
+	        </div>
+	    </div>
+		<div class="table">
+			<table class="table_left" cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<th>单位(%)</th>
+					<th>合计</th>
+				</tr>
+				<tr>
+					<th>2010-10-10</th>
+					<th>34534534</th>
+				</tr>
+				<tr>
+					<th>2010-10-10</th>
+					<th>34534534</th>
+				</tr>
+				<tr>
+					<th>2010-10-10</th>
+					<th>34534534</th>
+				</tr>
+				<tr>
+					<th>2010-10-10</th>
+					<th>34534534</th>
+				</tr>
+				<tr>
+					<th>2010-10-10</th>
+					<th>34534534</th>
+				</tr>
+				<tr>
+					<th>2010-10-10</th>
+					<th>34534534</th>
+				</tr>
+				<tr>
+					<th>2010-10-10</th>
+					<th>34534534</th>
+				</tr>
+				<tr>
+					<th>2010-10-10</th>
+					<th>34534534</th>
+				</tr>
+				<tr>
+					<th>2010-10-10</th>
+					<th>34534534</th>
+				</tr>
+				<tr>
+					<th>2010-10-10</th>
+					<th>34534534</th>
+				</tr>
+			</table>
+			<div class="table_right">
+				<table cellspacing="0" cellpadding="0" border="0">
+					<tr>
+						<th>0</th>
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+						<th>4</th>
+						<th>5</th>
+						<th>6</th>
+						<th>7</th>
+						<th>8</th>
+						<th>9</th>
+						<th>10</th>
+						<th>11</th>
+						<th>12</th>
+						<th>13</th>
+						<th>14</th>
+						<th>15</th>
+						<th>16</th>
+						<th>17</th>
+						<th>18</th>
+						<th>19</th>
+						<th>20</th>
+						<th>21</th>
+						<th>22</th>
+						<th>23</th>
+					</tr>
+					<tr>
+						<td>01111</td>
+						<td>01111</td>
+						<td>20111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+					</tr>
+					<tr>
+						<td>01111</td>
+						<td>01111</td>
+						<td>20111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+					</tr>
+					<tr>
+						<td>01111</td>
+						<td>01111</td>
+						<td>20111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+					</tr>
+					<tr>
+						<td>01111</td>
+						<td>01111</td>
+						<td>20111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+					</tr>
+					<tr>
+						<td>01111</td>
+						<td>01111</td>
+						<td>20111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+					</tr>
+					<tr>
+						<td>01111</td>
+						<td>01111</td>
+						<td>20111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+					</tr>
+					<tr>
+						<td>01111</td>
+						<td>01111</td>
+						<td>20111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+					</tr>
+					<tr>
+						<td>01111</td>
+						<td>01111</td>
+						<td>20111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+					</tr>
+					<tr>
+						<td>01111</td>
+						<td>01111</td>
+						<td>20111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+					</tr>
+					<tr>
+						<td>01111</td>
+						<td>01111</td>
+						<td>20111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+						<td>01111</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="foot">&nbsp;</div>
+</div>
+</body>
+<script type="text/javascript">
+    var trend = $("#trend"),
+        compare = $("#compare"),
+        trend_btn = $("#trend_btn"),
+        compare_btn = $("#compare_btn"),
+        current = $("#current")[0];
+
+    trend_btn.bind("mousedown",setCurrent);
+	compare_btn.bind("mousedown",setCurrent);
+
+    (function() {
+        var id = current.value;
+        if (!id) {
+            current.value = "trend";
+        }
+		id = "#" + id;
+        setNoCurrent();
+
+        $(id + "_btn").addClass("current");
+        $(id).show();
+    })();
+
+    function setNoCurrent() {
+        trend_btn.removeClass("current");
+		compare_btn.removeClass("current");
+		trend.hide();
+		compare.hide();
+    }
+
+    function setCurrent() {
+        if (this.id == current.value) return;
+        setNoCurrent();
+        var id = this.id.replace("_btn", "");
+			id = "#" + id;
+        $(this).addClass("current");
+        $(id).show();
+        current.value = id.replace("#","");
+    }
+    function rubbish() {
+        trend_btn.unbind("mousedown",setCurrent);
+		compare_btn.unbind("mousedown",setCurrent);
+        trend = compare = trend_btn = compare_btn = current = null;
+        window.onunload = null;
+    }
+	
+	$("#trend_end").datepicker({duration:0});
+	$("#compare_start").datepicker({duration:0});
+	$("#compare_end").datepicker({duration:0});
+
+	
+    if ($.browser.msie)
+        window.onunload = rubbish;
+		
+	if(window.ActiveXObject){
+		try{
+			document.execCommand("BackgroundImageCache", false, true);
+		}catch(e){}
+	}
+</script>
+</html>

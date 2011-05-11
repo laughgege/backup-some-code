@@ -1,0 +1,5 @@
+C:\Users\hiver\Desktop\nyanhan\C#\Wrox\bin\Debug\Wrox.exe
+C:\Users\hiver\Desktop\nyanhan\C#\Wrox\bin\Debug\Wrox.pdb
+C:\Users\hiver\Desktop\nyanhan\C#\Wrox\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\hiver\Desktop\nyanhan\C#\Wrox\obj\x86\Debug\Wrox.exe
+C:\Users\hiver\Desktop\nyanhan\C#\Wrox\obj\x86\Debug\Wrox.pdb

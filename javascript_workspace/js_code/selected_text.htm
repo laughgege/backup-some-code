@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="selection, selectionStart, getSelection, select, input, " />
+<meta name="description" content="在一些特殊应用中，我们需要获取页面上选中的文字，但是要实现这一需求，我们不得不面对那恼人的兼容问题，本文介绍了一个兼容性较好的解决方法。同时，也提供了一个在 FireFox 下获取 input 和 textarea 中选中文字的解决方案。" />
+<title>Javascript 获取页面上选中的文字 - selection, selectionStart, getSelection, select, input, </title>
+</head>
+<body>
+<div id="example">
+<h3 id="example_title">Javascript&nbsp;获取页面上选中的文字</h3>
+<div id="example_main">
+<!--************************************* 实例代码开始 *************************************-->
+<script type="text/javascript">
+function getSelectedText() {
+if (window.getSelection) {
+// This technique is the most likely to be standardized.
+// getSelection() returns a Selection object, which we do not document.
+return window.getSelection().toString();
+}
+else if (document.getSelection) {
+// This is an older, simpler technique that returns a string
+return document.getSelection();
+}
+else if (document.selection) {
+// This is the IE-specific technique.
+// We do not document the IE selection property or TextRange objects.
+return document.selection.createRange().text;
+}
+}
+function getTextFieldSelection(e) {
+if (e.selectionStart != undefined && e.selectionEnd != undefined) {
+var start = e.selectionStart;
+var end = e.selectionEnd;
+return e.value.substring(start, end);
+}
+else return "";  // Not supported on this browser
+}
+function doGetSelectedText() {
+var text = getSelectedText();
+document.getElementById('output').innerHTML = text;
+}
+function doGetTextFieldSelection() {
+var el = document.getElementById('tempText');
+var text = getTextFieldSelection(el);
+document.getElementById('output').innerHTML = text;
+}
+window.onload = function() {
+document.getElementById('getSelectedText').onclick = doGetSelectedText;
+document.getElementById('getTextFieldSelection').onclick = doGetTextFieldSelection;
+}
+</script>
+<h2>请选中页面上的文字后点击下面的按钮：</h2>
+<div id="output" style="color:#FF0000;font-weight:bold;"></div>
+<p>在编程的过程中，我们通常都会积累很多简单、有效并且可重用的小段代码，一个简单的字符串处理函数或者一个验证邮件地址的正则表达式，又或者一个简单的文件上传类，甚至一个效果不错的CSS导航样式。这些小技巧为我们节省了不少时间，但是时间一长，代码数量越来越多，寻找起来也耗费了不少时间。因此，本站致力于收集整理一些类似的小知识，并且努力提高文章搜索质量，一来方便大家查阅，二来也算是支持一下开源事业。</p>
+<p>本站收集的代码和教程中，有从世界著名开源软件中摘取的函数、类，也有网友提交的原创或翻译的精彩文章。本站的收录代码的标准是：简单、精彩、通用。</p>
+<br />
+<textarea rows="8" cols="80" id="tempText">在编程的过程中，我们通常都会积累很多简单、有效并且可重用的小段代码，一个简单的字符串处理函数或者一个验证邮件地址的正则表达式，又或者一个简单的文件上传类，甚至一个效果不错的CSS导航样式。</textarea>
+<br /><br />
+<input type="button" value="获取选中的内容" id="getSelectedText" />
+<input type="button" value="FireFox 下获取文本框里选中的内容" id="getTextFieldSelection" />
+<br />
+<!--************************************* 实例代码结束 *************************************-->
+</div>
+</div>
+<br />
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>相册首页</title>
+	<style type="text/css">
+		
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,
+form,fieldset,legend,input,textarea,p,blockquote,th,td,em,button{
+	margin:0;
+	padding:0;
+}
+
+body{
+	font-family: sans-serif;
+	font-size: 12px;
+	text-align:center;
+	width:100%;
+	background-color:#000;
+}
+.main{
+	width:960px;
+	overflow:hidden;
+	margin:10px auto;
+	background-color:#fff;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.head{
+	width:960px;
+	overflow:hidden;
+	margin:10px auto;
+	background-color:#fff;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.head h1{
+	text-align:left;
+	margin:20px;
+	font-size:30px;
+	text-shadow:#000 4px 4px 8px;
+}
+
+.thumb{
+	width:160px;
+	height:160px;
+	margin:16px;
+	float:left;
+	line-height:160px;
+	background-image:url(/static/imgviewer/img/framels.jpg);
+}
+
+.thumb a{
+	width:160px;
+	height:160px;
+	margin:16px;
+	vertical-align:middle;
+	display:table-cell;
+	line-height:160px;
+}
+
+.thumb:hover{
+	background-image:url(/static/imgviewer/img/framels_hover.jpg);
+}
+
+.thumb img{
+	vertical-align:middle;
+	border:0;
+}
+	</style>
+</head>
+<body>
+	<div class="head">
+		<h1>相册首页</h1>
+	</div>
+	<div class="main">
+		{% for d in data %}
+			<div class="thumb">
+			<a href="{{d.url}}" http="{{d.http}}">
+				<img src="{{d.src}}" alt="{{d.name}}"  title="{{d.name}}" />
+			</a>
+			</div>
+		{% endfor %}
+	</div>
+</body>
+</html>

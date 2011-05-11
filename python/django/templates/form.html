@@ -1,0 +1,8 @@
+{% load myFilter %}
+{% load tags %}
+<form action="/getPost/" Method="get">
+	<p>The time is {% current_time "%Y-%m-%d %I:%M %p" %}.</p>
+	<input type="text" value="" name="name" />
+	<input type="submit" value="submit" />
+	{{name|fuck:"n"}}
+</form>

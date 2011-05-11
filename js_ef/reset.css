@@ -1,0 +1,13 @@
+html, body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {margin:0; padding:0;}
+body, button, input, select, textarea{font: 12px/1.5 Arial,sans-serif;}
+h1, h2, h3, h4, h5, h6, button,input,select,textarea{font-size:100%;}
+ul,ol{list-style:none;}
+table {border-collapse: collapse;border-spacing: 0;}
+a{text-decoration:none;}
+a:visited{}
+a:hover{text-decoration:underline;}
+a:active{};
+.fix { display: inline-block; }
+.fix { display: block; overflow: hidden; }
+.clear { *zoom: 1; }
+.clear:after { clear: both; content: '\20';display: block;height: 0; }

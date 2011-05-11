@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cards>
+	<card>
+		<id>1</id>
+		<name>yanhan</name>
+		<img>img/head.png</img>
+		<url></url>
+		<title>&lt;h3&gt;小灰灰的blog&lt;/h3&gt;</title>
+		<date>2009-10-10</date>
+		<content>怎么地怎么地怎么地啊，怎么怎么地啊。</content>
+	</card>
+	<card>
+		<id>2</id>
+		<name>yanhan</name>
+		<img>img/head.png</img>
+		<url></url>
+		<title>&lt;h3&gt;小灰灰的blog&lt;/h3&gt;</title>
+		<date>2009-10-10</date>
+		<content>怎么地怎么地怎么地啊，怎么怎么地啊。</content>
+	</card>
+</cards>

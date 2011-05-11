@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Positions List</title>
+<link rel="stylesheet" href="../styles/efadvancement_internal.css" />
+<link rel="stylesheet" href="../styles/efadvancement_paging.css" />
+<script type="text/javascript" src="../js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="../js/paging.js"></script>
+<script type="text/javascript">
+(function($){
+	$(function(){
+		new Paging(20, 1, "#efadv_list_paging_top", function(n){alert(n)});
+		new Paging(20, 1, "#efadv_list_paging_bottom", function(n){alert(n)});
+	});
+})(jQuery);
+</script>
+</head>
+<body>
+<div class="efadv_main">
+	<form onsubmit="return false;">
+	<div class="efadv_form">
+		<table cellspacing="0" cellpadding="0" border="0">
+			<caption>Positions List</caption>
+			<tr class="efadv_list_filter">
+				<td colspan="6">
+					<label>
+						Location<select></select>                                               
+					</label>
+					<label>
+						Industry<select></select>                                               
+					</label>
+					<label>
+						Min Language Level<select></select>                                               
+					</label>
+				</td>
+			</tr>
+			
+			<!-- paging -->
+			<tr>
+				<td colspan="6">
+					<div class="efadv_list_paging" id="efadv_list_paging_top">
+
+					</div>
+					<input type="button" class="efadv_list_submit" value="Mark as hot positions" />
+				</td>
+			</tr>
+			
+			<tr class="efadv_list_thead">
+				<th>Position title</th>
+				<th>Location</th>
+				<th>Industry</th>
+				<th>Language level</th>
+				<th>Date posted</th>
+				<th>Operation</th>
+			</tr>
+			<tr class="efadv_list_content">
+				<td>
+					<label><input type="checkbox" value="" /></label>
+					<a href="###">Service Process Engineer</a>
+				</td>
+				<td>Beijing</td>
+				<td>Education</td>
+				<td>Elementary</td>
+				<td>2011-3-11</td>
+				<td>
+					<a href="###">Edit</a>
+					<a href="###">Delete</a><br />
+					<a href="###">View Candidate</a>
+				</td>
+			</tr>
+			<tr class="efadv_list_content efadv_list_old">
+				<td>
+					<label><input type="checkbox" value="" /></label>
+					<a href="###">Service Process Engineer</a>
+				</td>
+				<td>Beijing</td>
+				<td>Education</td>
+				<td>Elementary</td>
+				<td>2011-3-11</td>
+				<td>
+					<a href="###">Edit</a>
+					<a href="###">Delete</a><br />
+					<a href="###">View Candidate</a>
+				</td>
+			</tr>
+			<tr class="efadv_list_content">
+				<td>
+					<label><input type="checkbox" value="" /></label>
+					<a href="###">Service Process Engineer</a>
+				</td>
+				<td>Beijing</td>
+				<td>Education</td>
+				<td>Elementary</td>
+				<td>2011-3-11</td>
+				<td>
+					<a href="###">Edit</a>
+					<a href="###">Delete</a><br />
+					<a href="###">View Candidate</a>
+				</td>
+			</tr>
+			<tr class="efadv_list_content efadv_list_old">
+				<td>
+					<label><input type="checkbox" value="" /></label>
+					<a href="###">Service Process Engineer</a>
+				</td>
+				<td>Beijing</td>
+				<td>Education</td>
+				<td>Elementary</td>
+				<td>2011-3-11</td>
+				<td>
+					<a href="###">Edit</a>
+					<a href="###">Delete</a><br />
+					<a href="###">View Candidate</a>
+				</td>
+			</tr>
+			<tr class="efadv_list_content">
+				<td>
+					<label><input type="checkbox" value="" /></label>
+					<a href="###">Service Process Engineer</a>
+				</td>
+				<td>Beijing</td>
+				<td>Education</td>
+				<td>Elementary</td>
+				<td>2011-3-11</td>
+				<td>
+					<a href="###">Edit</a>
+					<a href="###">Delete</a><br />
+					<a href="###">View Candidate</a>
+				</td>
+			</tr>
+			<tr class="efadv_list_content efadv_list_old">
+				<td>
+					<label><input type="checkbox" value="" /></label>
+					<a href="###">Salesforce Development Manager</a>
+				</td>
+				<td>Beijing/Guangzhou</td>
+				<td>Education</td>
+				<td>Elementary</td>
+				<td>2011-3-11</td>
+				<td>
+					<a href="###">Edit</a>
+					<a href="###">Delete</a><br />
+					<a href="###">View Candidate</a>
+				</td>
+			</tr>
+			
+			<!-- paging -->
+			<tr class="">
+				<td colspan="6">
+					<div class="efadv_list_paging" id="efadv_list_paging_bottom">
+						
+					</div>
+					<input type="button" class="efadv_list_submit" value="Mark as hot positions" />
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>相册列表</title>
+        <style type="text/css">
+            
+            html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button {
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                font-family: sans-serif;
+                font-size: 12px;
+                text-align: center;
+                width: 100%;
+                background-color: #000;
+            }
+            
+            .main {
+                width: 960px;
+                overflow: hidden;
+                margin: 10px auto;
+                background-color: #333;
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+            }
+            
+            .head {
+                width: 960px;
+                overflow: hidden;
+                margin: 10px auto;
+                background-color: #fff;
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+            }
+            
+			#imgshower{
+				position:absolute;
+				border:0;
+				padding:10px;
+				background:#fff url(/static/imgviewer/img/bg_loading.gif) no-repeat center center;
+				border-radius: 10px;
+                -moz-border-radius: 10px;
+			}
+			
+            .head h1 {
+                text-align: left;
+                margin: 20px;
+                font-size: 30px;
+                text-shadow: #000 4px 4px 8px;
+            }
+			
+			.head h1 a{
+				font-size:20px;
+				text-decoration:none;
+				margin-left:10px;#c8c8c8
+			}
+            
+            .thumb {
+                width: 140px;
+                height: 140px;
+                margin: 10px;
+                float: left;
+                line-height: 160px;
+            }
+            
+            .thumb a {
+                width: 140px;
+                height: 140px;
+                vertical-align: middle;
+                display: table-cell;
+                line-height: 160px;
+				background-color: #000;
+				border-radius: 5px;
+                -moz-border-radius: 5px;
+            }
+            
+            .thumb a:hover {
+                background-color: #fff;
+            }
+            
+            .thumb img {
+                vertical-align: middle;
+                border: 0;
+            }
+        </style>
+		<script src="/static/imgviewer/tuna_090501.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="head">
+            <h1>{{name}}<a href="/ftpImgViewer/thumb/">回到首页</a></h1>
+        </div>
+        <div class="main" id="main">
+            {% for d in data %}
+            <div class="thumb">
+                <a href="javascript:void(0);" http="{{d.http}}"><img src="{{d.src}}" alt="{{d.name}}" title="{{d.name}}" /></a>
+            </div>
+			{% endfor %}
+        </div>
+		<img style="display:none;" height=600 width=800 src="/static/imgviewer/img/s.gif" id="imgshower" />
+    </body>
+	<script type="text/javascript">
+		var bs = $("imgshower");
+		var box = $("main");
+		var li = box.$("a");
+		var winSize = $pageSize();
+		var wi = winSize.winWidth - 200, he = winSize.winHeight - 100;
+		var DEFAULT = "/static/imgviewer/img/bg_loading.gif";
+		var size = [800, 600];
+		var current = {};
+		
+		
+		_.onresize = function(){winSize = $pageSize();wi = winSize.winWidth - 200;he = winSize.winHeight - 100;};
+		
+		bs.onmousemove = function(e){
+			e = $fixE(e);
+			var sl = ___.scrollLeft || __.body.scrollLeft;
+			var x = e.pageX || e.clientX + sl;
+			var left = this.style.left;
+			var wi = this.width;
+			var mi = parseInt(left) + parseInt(wi/3);
+			var mi2 = parseInt(left) + parseInt(wi*2/3);
+			if(x < mi)
+				this.style.cursor = "w-resize";
+			else if(x < mi2)
+				this.style.cursor = "pointer";
+			else
+				this.style.cursor = "e-resize";
+		}
+		
+		li.$each(function(item, i){
+			item.$r("click",function(e){
+				var tar = $fixE(e).$target;
+				$stopEvent(e,2);
+				showPic(tar, item);
+				document.onclick = function(e){
+					var tar = $fixE(e).$target;
+					if(tar == bs){
+						var sl = ___.scrollLeft || __.body.scrollLeft;
+						var x = e.pageX || e.clientX + sl;
+						var left = parseInt(bs.style.left);
+						var wi = parseInt(bs.width);
+						var mi = left + wi/3;
+						var mi2 = left + wi*2/3;
+						if(x < mi){
+							nextOne(false);
+						}
+						else if(x < mi2)
+							window.open(current.getAttribute("http"));
+						else{
+							nextOne(true);
+						}
+					}
+					else{
+						hide(bs);
+						document.onclick = null;
+					}
+					
+				};
+			});
+		});
+		
+		function hide(el){
+			el.style.display = "none";
+		}
+		function show(el, src){
+			var st = ___.scrollTop || __.body.scrollTop;
+			var sl = ___.scrollLeft || __.body.scrollLeft;
+			$animate2([
+				[el, {
+					width:[el.width, size[0], 0],
+					height:[el.height, size[1], 0]
+				}],
+				[el.style, {
+					top:[parseInt(el.style.top), (winSize.winHeight - size[1])/2 + st , "px"],
+					left:[parseInt(el.style.left), (winSize.winWidth - size[0])/2 + sl, "px"]
+				}]
+			],{callback:function(){
+				bs.src = src;
+			}});
+			//el.width = size[0];
+			//el.height = size[1];
+			//el.style.top = (winSize.winHeight - size[1])/2 + st + "px";
+			//el.style.left = (winSize.winWidth - size[0])/2 + sl + "px";
+			
+			//bs.src = src;
+		};
+		
+		function showPic(tar,item){
+			bs.src = "/static/imgviewer/img/s.gif";
+			var src = tar.tagName=="A" ? tar.getAttribute("http") : tar.parentNode.getAttribute("http");
+			var img = new Image();
+			img.onload = function(){
+				size = transformSize(img);
+				show(bs, src);
+			};
+			img.src = src;
+			setPos();
+			current = item;
+		}
+		
+		function setPos(){
+			var st = ___.scrollTop || __.body.scrollTop;
+			var sl = ___.scrollLeft || __.body.scrollLeft;
+			bs.style.top = (winSize.winHeight - size[1])/2 + st + "px";
+			bs.style.left = (winSize.winWidth - size[0])/2 + sl + "px";
+			bs.style.display = "";
+		}
+		
+		function nextOne(bol){
+			var tar = {};
+			if(bol){
+				tar = getNextNode(current.parentNode);
+			}
+			else
+				tar = getPreviousNode(current.parentNode);
+			
+			
+			if(tar){
+				var x = $(tar).$("a")[0];
+				showPic(x, x);
+			}
+			else
+				bs.style.display = "none";
+		}
+		function getNextNode(el){
+			do{
+				el = el.nextSibling;
+			}
+			while(el && el.nodeType != 1)
+			return el;
+		}
+		function getPreviousNode(el){
+			do{
+				el = el.previousSibling;
+			}
+			while(el && el.nodeType != 1)
+			return el;
+		}
+		function transformSize(el){
+			var r = wi/he;
+			var ra = el.width/el.height;
+			if(r >= ra){
+				return [ra*he, he];
+			}
+			else{
+				return [wi, wi/ra];
+			}
+		}
+	</script>
+</html>

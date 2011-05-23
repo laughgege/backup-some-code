@@ -195,9 +195,11 @@ img {border:0; display:block;}
 				var img = new Image(),
 					self = $(this);
 				img.onload = function(){
-					jObj.attr("src", IMG_LIST[i])
-						.attr("alt", ALT_LIST[i]);
-						//.css("opacity", 0).animate({opacity: 1});
+					
+					setTimeout(function(){
+						jObj.attr("src", IMG_LIST[i])
+							.attr("alt", ALT_LIST[i]);
+					},0);
 					
 					if(current){
 						current.removeClass("hover");
@@ -319,7 +321,8 @@ img {border:0; display:block;}
 		}
 		
 	}
-	showMasker($("#efceo_success_notice"));
+	
+	try{document.execCommand("BackgroundImageCache",false,true);}catch(e){;};
 })(jQuery);
 </script>
 </body>
